@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>중동·러시아 중고차 수출 플랫폼 사업계획서</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  :root {
+    --navy: #16324f;
+    --navy-2: #1f4e79;
+    --accent: #0e7c66;
+    --accent-light: #e6f3f0;
+    --gold: #c9a227;
+    --ink: #222831;
+    --gray: #5b6570;
+    --line: #d9dee4;
+    --bg-soft: #f4f6f9;
+    --red: #b03a3a;
+    --red-light: #faeeee;
+  }
+  html, body { font-family: 'Noto Sans CJK KR', sans-serif; color: var(--ink); font-size: 10.5pt; line-height: 1.62; }
+  @page { size: A4; margin: 0; }
+  .page { width: 210mm; min-height: 297mm; padding: 17mm 16mm 15mm; page-break-after: always; position: relative; background: #fff; }
+  .page:last-child { page-break-after: auto; }
+
+  /* ---------- cover ---------- */
+  .cover { background: linear-gradient(160deg, #122a42 0%, #16324f 45%, #1f4e79 100%); color: #fff; display: flex; flex-direction: column; justify-content: space-between; padding: 28mm 22mm; }
+  .cover .tag { display: inline-block; border: 1px solid rgba(255,255,255,.45); border-radius: 999px; padding: 4px 16px; font-size: 9.5pt; letter-spacing: 2px; color: #dbe6f2; }
+  .cover h1 { font-size: 30pt; line-height: 1.35; margin-top: 10mm; font-weight: 700; letter-spacing: -0.5px; }
+  .cover h1 .em { color: #ffd866; }
+  .cover .subtitle { margin-top: 8mm; font-size: 12.5pt; color: #c8d6e5; line-height: 1.8; font-weight: 350;}
+  .cover .divider { width: 42mm; height: 3px; background: var(--gold); margin: 12mm 0 0; }
+  .cover .meta { font-size: 10.5pt; color: #b8c7d9; line-height: 2; }
+  .cover .meta b { color: #fff; font-weight: 500; }
+  .cover .confidential { position: absolute; top: 16mm; right: 18mm; font-size: 8.5pt; letter-spacing: 3px; color: rgba(255,255,255,.55); }
+
+  /* ---------- common ---------- */
+  .sec-label { font-size: 9pt; font-weight: 700; letter-spacing: 2.5px; color: var(--accent); margin-bottom: 2mm; }
+  h2 { font-size: 17pt; color: var(--navy); font-weight: 700; letter-spacing: -0.3px; padding-bottom: 3mm; border-bottom: 2.5px solid var(--navy); margin-bottom: 6mm; }
+  h3 { font-size: 12pt; color: var(--navy-2); margin: 6mm 0 2.5mm; font-weight: 700; }
+  p { margin-bottom: 2.5mm; }
+  .lead { font-size: 11pt; color: var(--ink); }
+  .footer { position: absolute; bottom: 8mm; left: 16mm; right: 16mm; display: flex; justify-content: space-between; font-size: 8pt; color: #9aa4ae; border-top: 1px solid var(--line); padding-top: 2mm; }
+
+  table { width: 100%; border-collapse: collapse; margin: 3mm 0 5mm; font-size: 9.5pt; }
+  th { background: var(--navy); color: #fff; padding: 2.4mm 3mm; text-align: left; font-weight: 500; }
+  td { padding: 2.2mm 3mm; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:nth-child(even) td { background: var(--bg-soft); }
+  td.k { font-weight: 700; color: var(--navy-2); white-space: nowrap; }
+
+  .callout { border-left: 4px solid var(--accent); background: var(--accent-light); padding: 3.5mm 5mm; border-radius: 0 3px 3px 0; margin: 4mm 0; }
+  .callout.warn { border-left-color: var(--red); background: var(--red-light); }
+  .callout .t { font-weight: 700; color: var(--navy); display: block; margin-bottom: 1mm; }
+
+  .kpi-row { display: flex; gap: 4mm; margin: 4mm 0; }
+  .kpi { flex: 1; border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 4px; padding: 3.5mm 4mm; background: #fff; }
+  .kpi .num { font-size: 15pt; font-weight: 700; color: var(--navy); line-height: 1.3; }
+  .kpi .lbl { font-size: 8.5pt; color: var(--gray); margin-top: 1mm; }
+
+  /* flow diagram */
+  .flow { display: flex; align-items: stretch; gap: 0; margin: 4mm 0; }
+  .flow .node { flex: 1; background: var(--bg-soft); border: 1.5px solid var(--navy-2); border-radius: 5px; padding: 3mm 2.5mm; text-align: center; }
+  .flow .node .nt { font-weight: 700; color: var(--navy); font-size: 9.5pt; }
+  .flow .node .nd { font-size: 8pt; color: var(--gray); margin-top: 1mm; line-height: 1.5; }
+  .flow .arrow { display: flex; align-items: center; padding: 0 1.5mm; color: var(--accent); font-weight: 700; font-size: 13pt; }
+
+  /* escrow steps */
+  .steps { margin: 4mm 0; }
+  .step { display: flex; margin-bottom: 3mm; }
+  .step .badge { flex: 0 0 22mm; background: var(--navy); color: #fff; border-radius: 4px; text-align: center; padding: 2.5mm 0; font-weight: 700; font-size: 10pt; margin-right: 4mm; height: fit-content; }
+  .step .badge small { display: block; font-weight: 400; font-size: 7.5pt; color: #c8d6e5; }
+  .step .body { flex: 1; border-bottom: 1px dashed var(--line); padding-bottom: 2.5mm; }
+  .step .body b { color: var(--navy-2); }
+  .step .body .cond { font-size: 9pt; color: var(--gray); }
+
+  /* timeline */
+  .phase { display: flex; margin-bottom: 3.5mm; }
+  .phase .ph { flex: 0 0 30mm; font-weight: 700; color: #fff; background: var(--navy-2); border-radius: 4px; padding: 2.5mm 3mm; margin-right: 4mm; height: fit-content; font-size: 9.5pt; }
+  .phase .ph small { display: block; font-weight: 400; font-size: 7.5pt; color: #c8d6e5; }
+  .phase .pd { flex: 1; padding-top: 1mm; }
+  .phase .pd b { color: var(--navy); }
+  .phase .pd .goal { display: inline-block; background: var(--accent-light); color: var(--accent); font-size: 8.5pt; font-weight: 700; border-radius: 3px; padding: 0.5mm 2mm; margin-left: 2mm; }
+
+  ul.tight { padding-left: 5mm; margin: 2mm 0 4mm; }
+  ul.tight li { margin-bottom: 1.5mm; }
+  .two-col { display: flex; gap: 6mm; }
+  .two-col > div { flex: 1; }
+
+  .toc-item { display: flex; justify-content: space-between; padding: 3mm 2mm; border-bottom: 1px solid var(--line); font-size: 11pt; }
+  .toc-item .n { color: var(--accent); font-weight: 700; margin-right: 4mm; }
+  .toc-item .pg { color: var(--gray); }
+</style>
+</head>
+<body>
+
+<!-- ================= COVER ================= -->
+<div class="page cover">
+  <div class="confidential">CONFIDENTIAL</div>
+  <div>
+    <span class="tag">BUSINESS PLAN · 2026</span>
+    <h1>중동·러시아<br>중고차 수출 플랫폼<br><span class="em">사업계획서</span></h1>
+    <div class="subtitle">
+      개인 신뢰(Face to Face) 기반의 수출 거래를<br>
+      <b style="color:#fff">플랫폼 신뢰 기반의 B2B 마켓플레이스</b>로 전환합니다.
+    </div>
+    <div class="divider"></div>
+  </div>
+  <div class="meta">
+    <b>작성일</b> &nbsp; 2026년 7월<br>
+    <b>목적</b> &nbsp;&nbsp;&nbsp; 신규 사업 검토 보고<br>
+    <b>비전</b> &nbsp;&nbsp;&nbsp; 거래 데이터·신용 인프라 기반의 수출 플랫폼 구축 후 전략적 매각(Exit)
+  </div>
+</div>
+
+<!-- ================= TOC ================= -->
+<div class="page">
+  <div class="sec-label">CONTENTS</div>
+  <h2>목차</h2>
+  <div class="toc-item"><span><span class="n">01</span>요약 (Executive Summary)</span><span class="pg">3</span></div>
+  <div class="toc-item"><span><span class="n">02</span>시장의 문제 — 왜 지금 이 사업인가</span><span class="pg">4</span></div>
+  <div class="toc-item"><span><span class="n">03</span>솔루션 — 플랫폼 거래 구조</span><span class="pg">5</span></div>
+  <div class="toc-item"><span><span class="n">04</span>핵심 장치 — 에스크로 분할지급 &amp; 신용 시스템</span><span class="pg">6</span></div>
+  <div class="toc-item"><span><span class="n">05</span>수익 모델</span><span class="pg">7</span></div>
+  <div class="toc-item"><span><span class="n">06</span>단계별 실행 로드맵</span><span class="pg">8</span></div>
+  <div class="toc-item"><span><span class="n">07</span>리스크와 대응</span><span class="pg">9</span></div>
+  <div class="toc-item"><span><span class="n">08</span>경쟁 우위와 엑싯 전략</span><span class="pg">10</span></div>
+  <div class="toc-item"><span><span class="n">09</span>결론 및 요청 사항</span><span class="pg">11</span></div>
+  <div class="footer"><span>중동·러시아 중고차 수출 플랫폼 사업계획서</span><span>2</span></div>
+</div>
+
+<!-- ================= 01 SUMMARY ================= -->
+<div class="page">
+  <div class="sec-label">01 · EXECUTIVE SUMMARY</div>
+  <h2>요약</h2>
+
+  <p class="lead">한국 중고차 수출은 연간 수십만 대 규모의 큰 시장이지만, 거래 방식은 여전히 <b>개인 간 신뢰와 대면(Face to Face)에 의존하는 아날로그 구조</b>입니다. 이 시장의 병목은 차량이 아니라 <b>"신뢰"</b>입니다.</p>
+
+  <div class="callout">
+    <span class="t">핵심 아이디어</span>
+    현지 바이어가 원하는 차량의 견적을 요청하면, 국내 바이어들이 <b>가격·실차 사진·출고가능일</b>로 경쟁 입찰하고(국내 '헤이딜러'의 수출 버전), 대금은 <b>플랫폼 에스크로가 매입 → 선적 → 인도 단계별로 분할 지급</b>하여 사기와 먹튀를 구조적으로 차단합니다.
+  </div>
+
+  <h3>무엇이 달라지는가</h3>
+  <table>
+    <tr><th style="width:22%">구분</th><th style="width:39%">기존 방식</th><th>플랫폼 도입 후</th></tr>
+    <tr><td class="k">거래 신뢰</td><td>아는 사람끼리만 거래, 신규 진입 불가</td><td>평점·이행률 데이터가 신뢰를 대체</td></tr>
+    <tr><td class="k">대금 안전</td><td>선입금 후 무기한 대기, 사기 위험</td><td>에스크로 보관, 증빙 확인 후 분할 지급</td></tr>
+    <tr><td class="k">차량 확보</td><td>공급업체 정보 비대칭, 출고 지연</td><td>공급업체–바이어 직접 연결, 빠른 회전</td></tr>
+    <tr><td class="k">가격</td><td>수요·공급 따라 큰 변동, 불투명</td><td>경쟁 견적으로 시장가 투명화</td></tr>
+  </table>
+
+  <h3>사업의 최종 목표</h3>
+  <p>단순 중개 수수료 사업이 아니라, <b>바이어 신용 데이터 + 에스크로 정산 인프라 + 물류(탁송·포워딩·현지 법인) 수직 통합</b>을 갖춘 '수출 인프라 회사'를 만들어 국내 중고차 플랫폼, 물류 대기업, 글로벌 마켓플레이스, PE에 <b>전략적으로 매각(Exit)</b>하는 것입니다.</p>
+
+  <div class="kpi-row">
+    <div class="kpi"><div class="num">신뢰의 플랫폼화</div><div class="lbl">개인 신뢰 → 데이터 기반 플랫폼 신뢰로 전환</div></div>
+    <div class="kpi"><div class="num">에스크로 정산</div><div class="lbl">단계별 분할지급으로 거래 안전성 확보</div></div>
+    <div class="kpi"><div class="num">Exit 지향</div><div class="lbl">GMV·신용데이터·물류 인프라 = 매각 가치</div></div>
+  </div>
+
+  <div class="footer"><span>중동·러시아 중고차 수출 플랫폼 사업계획서</span><span>3</span></div>
+</div>
+
+<!-- ================= 02 PROBLEM ================= -->
+<div class="page">
+  <div class="sec-label">02 · PROBLEM</div>
+  <h2>시장의 문제 — 왜 지금 이 사업인가</h2>
+
+  <p class="lead">기존 수출 회사들이 공통적으로 겪는 한계는 아래와 같으며, 모두 <b>"신뢰가 개인에게 묶여 있다"</b>는 한 가지 원인에서 나옵니다.</p>
+
+  <table>
+    <tr><th style="width:6%">#</th><th style="width:40%">한계점</th><th>결과</th></tr>
+    <tr><td>1</td><td class="k">바이어와의 개인 신뢰·대면 기반 거래</td><td>신규 진입자 배제, 사업 확장 불가</td></tr>
+    <tr><td>2</td><td class="k">수요·공급에 따른 큰 가격 변동</td><td>마진 예측 불가, 거래 분쟁 빈발</td></tr>
+    <tr><td>3</td><td class="k">수출회사가 최종 구매자를 모름</td><td>수요 데이터 부재, 매입 판단이 감에 의존</td></tr>
+    <tr><td>4</td><td class="k">국내 공급업체 정보의 비대칭</td><td>바이어의 출고 지연·사기 피해</td></tr>
+    <tr><td>5</td><td class="k">초기 수출업체의 높은 진입장벽</td><td>기존 네트워크의 독점 구조 고착</td></tr>
+    <tr><td>6</td><td class="k">깨진 신뢰는 회복 불가</td><td>거래 단절, 시장 전체의 비효율</td></tr>
+    <tr><td>7</td><td class="k">불안정한 대금 결제 (러시아: 테더 등 비공식 송금)</td><td>법적·세무 리스크, 자금 추적 불가</td></tr>
+  </table>
+
+  <h3>현지 구매자가 겪는 고통 (실제 페인포인트)</h3>
+  <ul class="tight">
+    <li>좋은 바이어를 수소문해서 찾은 뒤, <b>돈을 먼저 보내고 약속일을 무기한 기다려야</b> 합니다.</li>
+    <li>바이어가 신뢰할 만한 사람인지 <b>검증할 방법이 전혀 없습니다.</b> 평판은 입소문뿐입니다.</li>
+    <li>차량 상태·가격을 비교할 수 없어 <b>부르는 게 값</b>이 됩니다.</li>
+  </ul>
+
+  <div class="callout">
+    <span class="t">시사점</span>
+    신뢰를 <b>개인이 아닌 플랫폼이 담보</b>하는 순간, 억눌려 있던 거래가 풀립니다. 국내에서 헤이딜러·엔카가 중고차 '내수' 거래의 신뢰 문제를 풀어 시장을 키운 것과 같은 전환을, '수출' 거래에서 만드는 것이 본 사업입니다.
+  </div>
+
+  <div class="footer"><span>중동·러시아 중고차 수출 플랫폼 사업계획서</span><span>4</span></div>
+</div>
+
+<!-- ================= 03 SOLUTION ================= -->
+<div class="page">
+  <div class="sec-label">03 · SOLUTION</div>
+  <h2>솔루션 — 플랫폼 거래 구조</h2>
+
+  <h3>거래 참여자 연결 구조</h3>
+  <div class="flow">
+    <div class="node"><div class="nt">국내 공급업체</div><div class="nd">매매상사·딜러<br>차량 등록·재고 공유</div></div>
+    <div class="arrow">→</div>
+    <div class="node"><div class="nt">국내 바이어</div><div class="nd">차량 매입·수출<br>플랫폼이 신용등급 관리</div></div>
+    <div class="arrow">→</div>
+    <div class="node"><div class="nt">현지 구매자</div><div class="nd">중동·러시아·CIS<br>견적 비교 후 선택</div></div>
+    <div class="arrow">→</div>
+    <div class="node" style="border-color:var(--accent); background:var(--accent-light)"><div class="nt" style="color:var(--accent)">플랫폼 정산</div><div class="nd">에스크로 보관<br>단계별 분할 지급</div></div>
+  </div>
+
+  <h3>① 역경매형 견적 요청 시스템 <span style="font-weight:400;color:var(--gray);font-size:9.5pt">— 헤이딜러 모델의 수출 버전</span></h3>
+  <div class="steps">
+    <div class="step"><div class="badge">STEP 1</div><div class="body"><b>현지 구매자가 견적 요청</b> — 모델·연식·주행거리·예산·도착 희망 국가를 입력</div></div>
+    <div class="step"><div class="badge">STEP 2</div><div class="body"><b>국내 바이어들이 경쟁 입찰</b> — 가격 + 실차 사진 + 차대번호 + <b>출고가능일</b>을 제시</div></div>
+    <div class="step"><div class="badge">STEP 3</div><div class="body"><b>구매자가 견적 선택</b> — 가격뿐 아니라 바이어의 <b>평점·이행률·거래이력</b>을 보고 선택</div></div>
+    <div class="step"><div class="badge">STEP 4</div><div class="body"><b>에스크로 결제 → 출고 추적</b> — 입금은 플랫폼이 보관, 출고일 지연 시 자동 알림·패널티</div></div>
+  </div>
+
+  <h3>② 평점·리뷰·거래이력 시스템</h3>
+  <p>출고일 준수율, 분쟁률, 누적 거래량을 지표화하여 <b>"좋은 바이어"가 데이터로 증명</b>되게 합니다. 신규 바이어도 실적으로 성장할 수 있어 시장의 진입장벽이 사라지고, 플랫폼에는 <b>대체 불가능한 신용 데이터 자산</b>이 쌓입니다.</p>
+
+  <h3>③ 물류 수직 통합 (성장 단계)</h3>
+  <p>탁송업체, 포워더, 현지 운영 가능한 법인을 <b>인수·운영</b>하여 출고 → 선적 → 통관 → 현지 인도까지 플랫폼 안에서 원스톱으로 처리합니다. 물류 마진 확보와 동시에 고객 경험을 완결합니다.</p>
+
+  <h3>이해관계자별 가치</h3>
+  <table>
+    <tr><th style="width:20%">대상</th><th>얻는 것</th></tr>
+    <tr><td class="k">현지 구매자</td><td>견적 비교·평점 확인·안전 결제 — 더 싸고, 더 빠르고, 떼일 걱정 없이 구매</td></tr>
+    <tr><td class="k">국내 바이어</td><td>공급업체와 즉시 연결, 실적이 쌓이면 신뢰가 자산이 됨</td></tr>
+    <tr><td class="k">공급업체</td><td>다수 바이어에게 노출 → 빠른 차량 회전, 현금흐름 개선</td></tr>
+  </table>
+
+  <div class="footer"><span>중동·러시아 중고차 수출 플랫폼 사업계획서</span><span>5</span></div>
+</div>
+
+<!-- ================= 04 ESCROW ================= -->
+<div class="page">
+  <div class="sec-label">04 · TRUST ENGINE</div>
+  <h2>핵심 장치 — 에스크로 분할지급 &amp; 신용 시스템</h2>
+
+  <p class="lead">이 사업의 성패는 <b>"국내 바이어가 돈만 받고 사라지는 것을 어떻게 막느냐"</b>에 달려 있습니다. 원칙은 하나입니다 — <b>돈은 일이 실제로 진행된 만큼만 지급된다.</b></p>
+
+  <h3>에스크로 분할지급 구조</h3>
+  <div class="steps">
+    <div class="step">
+      <div class="badge">1차 지급<small>약 40%</small></div>
+      <div class="body"><b>차량 매입 증빙 확인 시</b><br><span class="cond">매매계약서 + 이전등록(말소) 서류 + 차대번호 실차 사진 → 플랫폼이 차대번호로 서류·실차 대조 검증</span></div>
+    </div>
+    <div class="step">
+      <div class="badge">2차 지급<small>약 40%</small></div>
+      <div class="body"><b>선적 증빙 확인 시</b><br><span class="cond">수출신고필증 + 선하증권(B/L) → 제휴 포워더를 통해 선적 사실 교차 검증</span></div>
+    </div>
+    <div class="step">
+      <div class="badge">잔금<small>약 20%</small></div>
+      <div class="body"><b>현지 도착·인도 확인 시</b><br><span class="cond">현지 파트너/구매자 인수 확인, 분쟁 없으면 도착 후 N일 경과 시 자동 지급</span></div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="t">부수 효과 — 진입장벽 완화</span>
+    매입 자금이 부족한 신규 바이어도 1차 지급금으로 차량을 매입할 수 있습니다(단, 신용등급에 따라 선지급/후지급 차등). 에스크로가 <b>사기 방지 장치이자 신규 바이어 육성 장치</b>가 됩니다.
+  </div>
+
+  <h3>바이어 신용 시스템 — 5중 안전장치</h3>
+  <table>
+    <tr><th style="width:24%">장치</th><th>내용</th></tr>
+    <tr><td class="k">① KYC / KYB</td><td>사업자등록·신분증·계좌 실명 확인, 수출업 등록 여부 검증</td></tr>
+    <tr><td class="k">② 보증금·거래한도</td><td>신용등급별 거래 한도 차등 — 신규 바이어는 소액 거래부터 시작</td></tr>
+    <tr><td class="k">③ 신용등급 (A~D)</td><td>출고일 준수율·분쟁률·거래량·리뷰로 산출 → 한도·선지급 조건에 직결</td></tr>
+    <tr><td class="k">④ 이행보증보험</td><td>서울보증(SGI) 등과 제휴하여 고액 거래 커버 검토</td></tr>
+    <tr><td class="k">⑤ 블랙리스트</td><td>사기·미이행 시 영구 퇴출 + 법적 조치 — "퇴출되면 재기 불가" 구조 자체가 억지력</td></tr>
+  </table>
+
+  <div class="footer"><span>중동·러시아 중고차 수출 플랫폼 사업계획서</span><span>6</span></div>
+</div>
+
+<!-- ================= 05 REVENUE ================= -->
+<div class="page">
+  <div class="sec-label">05 · REVENUE MODEL</div>
+  <h2>수익 모델</h2>
+
+  <p class="lead">수익원은 거래 수수료에서 시작해 <b>정산 → 물류 → 데이터</b>로 확장됩니다. 단계가 올라갈수록 마진율과 방어력(해자)이 함께 커집니다.</p>
+
+  <table>
+    <tr><th style="width:24%">수익원</th><th style="width:46%">내용</th><th>도입 시점</th></tr>
+    <tr><td class="k">① 거래 수수료</td><td>성사 거래당 차량가액의 1~3% (초기 0%~저율로 사용자 확보 후 단계적 인상)</td><td>Phase 1</td></tr>
+    <tr><td class="k">② 에스크로·정산 수수료</td><td>결제 금액의 일정 비율</td><td>Phase 1</td></tr>
+    <tr><td class="k">③ 물류 부가서비스</td><td>탁송·포워딩·통관 대행 마진 — 수직 통합 후 핵심 수익원</td><td>Phase 2~3</td></tr>
+    <tr><td class="k">④ 바이어 프리미엄</td><td>상위 노출, 견적 우선권, 신용보증 한도 확대 (구독)</td><td>Phase 2</td></tr>
+    <tr><td class="k">⑤ 데이터 사업</td><td>국가별 수요·시세 데이터 → 공급업체 매입 가이드, 금융사 제휴</td><td>Phase 3~</td></tr>
+  </table>
+
+  <h3>수익 구조 예시 (거래 1건 기준)</h3>
+  <div class="kpi-row">
+    <div class="kpi"><div class="num">1,500만 원</div><div class="lbl">차량 1대 평균 거래가액 (가정)</div></div>
+    <div class="kpi"><div class="num">2%</div><div class="lbl">목표 거래 수수료율 (성숙기)</div></div>
+    <div class="kpi"><div class="num">30만 원+α</div><div class="lbl">건당 수수료 + 정산·물류 마진</div></div>
+  </div>
+  <p style="font-size:9pt; color:var(--gray)">※ 위 수치는 사업 구조 이해를 위한 가정치이며, Phase 0 검증 단계에서 실거래 데이터로 확정합니다.</p>
+
+  <h3>왜 거래량이 구조적으로 늘어나는가</h3>
+  <ul class="tight">
+    <li><b>양면 네트워크 효과</b> — 바이어가 많을수록 견적 경쟁이 붙어 구매자가 유입되고, 구매자가 많을수록 바이어가 유입됩니다.</li>
+    <li><b>신뢰 비용 제거</b> — 기존에는 "믿을 수 있는 사람"하고만 거래했지만, 플랫폼 위에서는 처음 보는 상대와도 안전하게 거래할 수 있어 잠재 거래가 현실 거래로 전환됩니다.</li>
+    <li><b>회전율 상승</b> — 공급업체–바이어 연결이 빨라져 같은 자본으로 더 많은 차량이 회전합니다.</li>
+  </ul>
+
+  <div class="footer"><span>중동·러시아 중고차 수출 플랫폼 사업계획서</span><span>7</span></div>
+</div>
+
+<!-- ================= 06 ROADMAP ================= -->
+<div class="page">
+  <div class="sec-label">06 · ROADMAP</div>
+  <h2>단계별 실행 로드맵</h2>
+
+  <div class="phase">
+    <div class="ph">Phase 0<small>~3개월</small></div>
+    <div class="pd"><b>수동 검증 (콘시어지 MVP)</b><span class="goal">목표: 가설 검증</span><br>
+    플랫폼 개발 전, 특정 국가 1곳(예: UAE 또는 CIS 경유 러시아) + 기존 바이어 10~20명으로 카톡/텔레그램 + 수기 에스크로 운영. <b>개발비를 쓰기 전에 "현지 구매자가 아는 사람 대신 플랫폼 견적을 선택하는가"를 검증</b>합니다.</div>
+  </div>
+  <div class="phase">
+    <div class="ph">Phase 1<small>3~9개월</small></div>
+    <div class="pd"><b>MVP 플랫폼 출시</b><span class="goal">목표: 월 30건 거래</span><br>
+    견적 요청·에스크로(제휴 PG)·평점 기능의 웹 플랫폼(한국어/러시아어/아랍어/영어). 국내 바이어 온보딩에 집중 — 초기 수수료 0%.</div>
+  </div>
+  <div class="phase">
+    <div class="ph">Phase 2<small>9~18개월</small></div>
+    <div class="pd"><b>유동성 확보·현지 확장</b><span class="goal">목표: 재거래율 30%+</span><br>
+    현지 마케팅(텔레그램 채널·딜러 커뮤니티), 공급업체 직접 연동, 국가 확장. 텔레그램 봇 알림 등 현지 채널 최적화.</div>
+  </div>
+  <div class="phase">
+    <div class="ph">Phase 3<small>18~36개월</small></div>
+    <div class="pd"><b>물류 수직 통합</b><span class="goal">목표: 풀필먼트 완성</span><br>
+    탁송업체·포워더·현지 운영 법인 인수. 자체 에스크로 라이선스 취득. 출고부터 현지 인도까지 원스톱 처리.</div>
+  </div>
+  <div class="phase">
+    <div class="ph">Phase 4<small>36개월~</small></div>
+    <div class="pd"><b>엑싯 준비</b><span class="goal">목표: 전략적 매각</span><br>
+    GMV·take rate·재구매율·신용 데이터 지표 정리, 인수 후보 접촉. (예시 마일스톤: 월 GMV 100억 원 + 흑자 전환 시 협상 개시)</div>
+  </div>
+
+  <h3>콜드스타트(닭과 달걀) 해법</h3>
+  <ul class="tight">
+    <li><b>공급(국내 바이어) 먼저 확보</b> — 견적 요청이 왔을 때 응답할 바이어 풀을 먼저 만듭니다 (수수료 0%, 물류비 지원).</li>
+    <li><b>수요는 기존 네트워크를 이관</b> — 초기 바이어들이 이미 보유한 현지 고객을 플랫폼 거래로 전환합니다.</li>
+    <li><b>현지 커뮤니티 직공략</b> — 러시아·CIS는 텔레그램 채널, 중동은 현지 딜러 협회 중심 마케팅.</li>
+  </ul>
+
+  <h3>Phase 1 성공 지표 (KPI)</h3>
+  <div class="kpi-row">
+    <div class="kpi"><div class="num">월 30건+</div><div class="lbl">성사 거래 수</div></div>
+    <div class="kpi"><div class="num">3개+</div><div class="lbl">견적 요청당 평균 응찰 수</div></div>
+    <div class="kpi"><div class="num">5% 미만</div><div class="lbl">에스크로 거래 분쟁률</div></div>
+    <div class="kpi"><div class="num">30%+</div><div class="lbl">구매자 재거래율 = 핵심 가설 검증</div></div>
+  </div>
+
+  <div class="footer"><span>중동·러시아 중고차 수출 플랫폼 사업계획서</span><span>8</span></div>
+</div>
+
+<!-- ================= 07 RISK ================= -->
+<div class="page">
+  <div class="sec-label">07 · RISK MANAGEMENT</div>
+  <h2>리스크와 대응</h2>
+
+  <table>
+    <tr><th style="width:26%">리스크</th><th>대응 전략</th></tr>
+    <tr><td class="k">국내 바이어 먹튀<br><span style="font-weight:400;font-size:8.5pt;color:var(--gray)">입금만 받고 차량 미매입</span></td><td>에스크로 분할지급(매입 증빙 없으면 지급 자체가 불가) + 보증금·거래한도 + 이행보증보험 + 영구 퇴출. <b>구조적으로 먹튀 구간을 제거</b></td></tr>
+    <tr><td class="k">러시아 송금·제재</td><td>대러 제재 준수를 전제로 <b>허용 범위 내 시장(가액 기준 이하 차량)에 집중</b>. CIS 제3국(카자흐스탄·UAE 등) 경유의 합법 정산 구조를 법률 자문으로 확정. 테더 등 비공식 채널은 사용하지 않음</td></tr>
+    <tr><td class="k">국내 금융 규제</td><td>초기에는 등록 에스크로/PG 사업자 제휴로 시작(전자금융거래법·외국환거래법 리스크 회피), 거래량 확보 후 자체 라이선스 취득</td></tr>
+    <tr><td class="k">보이스피싱 등<br>범죄자금 유입</td><td>입금자–구매자 명의 대조, 이상거래탐지(FDS), 지연 인출 정책, 거래별 가상계좌 분리 운영</td></tr>
+    <tr><td class="k">초기 자본·마케팅 비용</td><td>Phase 0 수동 검증으로 데이터 확보 후 투자 유치. 국가를 한 곳씩 순차 확장하여 번레이트 통제</td></tr>
+    <tr><td class="k">운항·통관·세무</td><td>복수 포워더 제휴, 관세사·세무사 상시 자문, 국가별 통관 요건 DB화(연식 제한·핸들 방향·배출가스 등)</td></tr>
+    <tr><td class="k">차량 상태 분쟁</td><td>표준 검수 리포트(성능기록부 + 플랫폼 검수 사진) 의무화, 분쟁 시 에스크로 잔금에서 정산</td></tr>
+    <tr><td class="k">환율 변동</td><td>견적 유효기간 명시, 원화/USD 고정 견적 정책, 환헤지 검토</td></tr>
+  </table>
+
+  <div class="callout warn">
+    <span class="t">가장 중요한 원칙 — 합법 정산 구조</span>
+    기존 러시아 수출의 테더(USDT) 수령 관행은 자금세탁·외국환거래법 위반 소지가 있고, <b>엑싯 실사(Due Diligence)에서 치명적 결격 사유</b>가 됩니다. 본 플랫폼은 처음부터 합법 경로만 사용합니다. 규제를 정면으로 풀어낸 정산 구조는 비용이 아니라 <b>후발주자가 따라올 수 없는 해자이자 매각 가치의 핵심</b>입니다.
+  </div>
+
+  <div class="footer"><span>중동·러시아 중고차 수출 플랫폼 사업계획서</span><span>9</span></div>
+</div>
+
+<!-- ================= 08 MOAT & EXIT ================= -->
+<div class="page">
+  <div class="sec-label">08 · MOAT &amp; EXIT</div>
+  <h2>경쟁 우위와 엑싯 전략</h2>
+
+  <h3>경쟁 구도</h3>
+  <table>
+    <tr><th style="width:30%">경쟁자</th><th>한계 / 우리의 차별점</th></tr>
+    <tr><td class="k">개별 수출업체 (오프라인)</td><td>개인 신뢰 기반이라 확장 불가 — 우리는 이들을 경쟁자가 아닌 <b>플랫폼 참여자(바이어)로 흡수</b></td></tr>
+    <tr><td class="k">수출 중개 카페·텔레그램 채널</td><td>매칭만 있고 결제 안전장치 없음 — 에스크로·평점이 없어 사기 문제 미해결</td></tr>
+    <tr><td class="k">일본계 글로벌 수출몰<br>(SBT, BE FORWARD 등)</td><td>자사 재고 판매 모델(플랫폼=판매자) — 우리는 <b>바이어 간 매칭 + 에스크로</b> 모델로 재고 리스크 없이 확장, 한국차 소싱은 이들이 대체 불가</td></tr>
+  </table>
+
+  <h3>해자 (Moat) — 시간이 지날수록 강해지는 3가지</h3>
+  <ul class="tight">
+    <li><b>① 바이어 신용 데이터</b> — 이행률·분쟁 이력은 시간과 거래량으로만 쌓입니다. 후발주자가 복제할 수 없는 자산이며, 엑싯 밸류에이션의 핵심 근거입니다.</li>
+    <li><b>② 합법 정산 인프라</b> — 에스크로 라이선스와 국가별 합법 송금 경로는 규제를 정면 돌파해야만 얻는 자산입니다.</li>
+    <li><b>③ 양면 네트워크 효과</b> — 바이어·구매자가 늘수록 상대편의 효용이 커져 이탈이 어려워집니다.</li>
+  </ul>
+
+  <h3>엑싯 전략</h3>
+  <table>
+    <tr><th style="width:34%">잠재 인수자</th><th>인수 동기</th></tr>
+    <tr><td class="k">국내 중고차 플랫폼<br>(엔카·케이카·헤이딜러 등)</td><td>내수 성장 한계 → 수출 판로·해외 수요 데이터 확보</td></tr>
+    <tr><td class="k">종합 물류사<br>(현대글로비스 등)</td><td>완성차 물류 역량의 중고차 수출 확장, 화물 물동량 확보</td></tr>
+    <tr><td class="k">글로벌 마켓플레이스·일본계 수출몰</td><td>한국차 소싱 인프라와 바이어 네트워크 즉시 확보</td></tr>
+    <tr><td class="k">사모펀드 (PE)</td><td>반복 거래 현금흐름 + 독점적 신용 데이터 자산</td></tr>
+  </table>
+
+  <div class="kpi-row">
+    <div class="kpi"><div class="num">GMV</div><div class="lbl">거래액 성장률 — 매각가의 1차 지표</div></div>
+    <div class="kpi"><div class="num">Take Rate</div><div class="lbl">수수료율 — 수익화 능력 증명</div></div>
+    <div class="kpi"><div class="num">재거래율</div><div class="lbl">네트워크 효과·락인 증명</div></div>
+    <div class="kpi"><div class="num">신용 DB</div><div class="lbl">대체 불가 자산 — 프리미엄 근거</div></div>
+  </div>
+
+  <div class="footer"><span>중동·러시아 중고차 수출 플랫폼 사업계획서</span><span>10</span></div>
+</div>
+
+<!-- ================= 09 CONCLUSION ================= -->
+<div class="page">
+  <div class="sec-label">09 · CONCLUSION</div>
+  <h2>결론 및 요청 사항</h2>
+
+  <p class="lead">본 사업은 <b>"신뢰"라는 병목을 플랫폼으로 풀어 억눌린 수출 거래를 폭발시키는 사업</b>입니다. 국내 중고차 내수 시장에서 이미 검증된 전환(헤이딜러·엔카 모델)을, 아직 아날로그로 남아 있는 수출 시장에 적용합니다.</p>
+
+  <h3>이 사업이 성립하는 3가지 이유</h3>
+  <ul class="tight">
+    <li><b>문제가 크고 명확합니다</b> — 사기·먹튀·무기한 대기는 시장 참여자 모두가 인정하는 고통입니다.</li>
+    <li><b>해법이 검증된 모델입니다</b> — 역경매 견적 + 에스크로 + 평점은 국내외에서 이미 작동이 증명된 조합입니다.</li>
+    <li><b>엑싯 경로가 구체적입니다</b> — 신용 데이터·정산 인프라·물류 통합은 플랫폼·물류사·PE가 비싸게 사는 자산입니다.</li>
+  </ul>
+
+  <h3>다음 단계 (승인 요청)</h3>
+  <div class="steps">
+    <div class="step"><div class="badge">1</div><div class="body"><b>Phase 0 착수 승인</b> — 파일럿 국가 1곳 선정, 기존 바이어 10~20명 섭외, 수동 거래 10건 실행 (3개월)</div></div>
+    <div class="step"><div class="badge">2</div><div class="body"><b>법률 검토 착수</b> — 에스크로(결제대금예치)·외국환거래법·대러 제재 준수 구조에 대한 법무 자문</div></div>
+    <div class="step"><div class="badge">3</div><div class="body"><b>파일럿 예산 배정</b> — Phase 0 운영비(인건비·출장·법률자문·거래 검증 비용) 승인</div></div>
+    <div class="step"><div class="badge">4</div><div class="body"><b>Phase 0 결과 보고 후 MVP 개발 결정</b> — 검증 데이터를 근거로 투자 규모 확정</div></div>
+  </div>
+
+  <div class="callout">
+    <span class="t">핵심 메시지</span>
+    큰 개발비를 먼저 쓰지 않습니다. <b>3개월의 수동 검증으로 핵심 가설("구매자가 아는 사람 대신 플랫폼을 선택한다")을 먼저 증명</b>하고, 데이터를 근거로 다음 투자를 결정하는 단계적 접근을 제안드립니다.
+  </div>
+
+  <div class="footer"><span>중동·러시아 중고차 수출 플랫폼 사업계획서</span><span>11</span></div>
+</div>
+
+</body>
+</html>
